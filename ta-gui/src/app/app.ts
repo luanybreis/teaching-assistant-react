@@ -15,11 +15,12 @@ export class App {
   alunos: Aluno[] = [];
 
   gravar(a: Aluno): void {
-  if (this.alunoService.gravar(a)) {
-+       this.alunos.push(a);
-+       this.aluno = {nome: "", cpf: "", email: ""};
-+     } else {
-+       this.aluno.cpf = "";
-+     }
+    if (this.alunoService.gravar(a)) {
+      this.alunos.push(a);
+      this.aluno = {nome: "", cpf: "", email: ""};
+    } else {
+      this.aluno.cpf = "";
+      alert("Já existe um aluno com esse CPF");
+    }
   }
 }
