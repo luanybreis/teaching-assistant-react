@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
-
+import { Aluno } from './aluno';
+import { AlunoService } from './aluno.service';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,10 @@ import { Component, signal } from '@angular/core';
 export class App {
   protected readonly title = signal('ta-gui');
   aluno: Aluno = {nome: "", cpf: "", email: ""};
+  alunoService = new AlunoService();
+
+  gravar(a: Aluno): void {
+    this.alunoService.gravar(a);
+    this.aluno = {nome: "", cpf: "", email: ""};
+  }
 }
