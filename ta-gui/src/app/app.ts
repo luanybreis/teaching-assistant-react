@@ -9,22 +9,27 @@ import { AlunoService } from './aluno.service';
   styleUrl: './app.css'
 })
 export class App {
- constructor(private alunoService: AlunoService) {}
+  constructor(private alunoService: AlunoService) {}
 
   protected readonly title = signal('ta-gui');
-  aluno: Aluno = {nome: "", cpf: "", email: ""};
+  aluno: Aluno = new Aluno();
   alunos: Aluno[] = [];
   cpfduplicado: boolean = false;
 
-  gravar(a: Aluno): void {
-    if (this.alunoService.gravar(a)) {
+  criarAluno(a: Aluno): void {
+    if (this.alunoService.criar(a)) {
       this.alunos.push(a);
-      this.aluno = {nome: "", cpf: "", email: ""};
+      this.aluno = new Aluno();
     } else {
-       this.cpfduplicado = true;
+      this.cpfduplicado = true;
     }
   }
-   onMove(): void {
-      this.cpfduplicado = false;
+
+  onMove(): void {
+    this.cpfduplicado = false;
+  }
+
+  atualizarAluno(aluno: Aluno): void {
+    this.alunoService.atualizar(aluno);
   }
 }
