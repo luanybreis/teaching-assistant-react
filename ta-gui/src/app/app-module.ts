@@ -4,10 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { AlunoService } from './aluno.service';
+import { MetasComponent } from './metas.component';
+import { AlunosComponent } from './alunos.component';
 
 @NgModule({
   declarations: [
-    App
+    App,
+    MetasComponent,
+    AlunosComponent
   ],
   imports: [
     BrowserModule,
