@@ -6,6 +6,7 @@ import { App } from './app';
 import { AlunoService } from './aluno.service';
 import { MetasComponent } from './metas.component';
 import { AlunosComponent } from './alunos.component';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { AlunosComponent } from './alunos.component';
   providers: [
     provideBrowserGlobalErrorListeners(),
     // provideClientHydration(),
+    provideHttpClient(),
   ],
   bootstrap: [App]
 })
