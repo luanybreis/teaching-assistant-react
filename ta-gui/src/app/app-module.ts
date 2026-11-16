@@ -23,6 +23,7 @@ import { provideHttpClient } from '@angular/common/http';
     provideBrowserGlobalErrorListeners(),
     // provideClientHydration(),
     provideHttpClient(),
+    AlunoService
   ],
   bootstrap: [App]
 })
