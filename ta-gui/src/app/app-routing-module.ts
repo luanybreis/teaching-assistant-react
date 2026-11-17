@@ -4,6 +4,7 @@ import { MetasComponent } from './metas.component';
 import { AlunosComponent } from './alunos.component';
 
 const routes: Routes = [
+  {path: '', redirectTo: 'alunos', pathMatch: 'full' },
   { path: 'metas', component: MetasComponent },
   { path: 'alunos', component: AlunosComponent }
 ];
